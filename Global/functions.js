@@ -39,3 +39,29 @@ async function temporarilyChangeClass(target, time, Class) {
     await Delay(time);
     document.querySelectorAll(target).classList.remove(Class);
 }
+
+function prefab(prefabName, design) {
+    const prefabs = document.querySelectorAll(prefabName);
+    for (let prefab of prefabs) {
+        for (let element of design) {
+            let Part = document.createElement(element.Name);
+            if ("textContent" in Part && "text" in element) {
+                Part.textContent = element.text
+            }
+
+            if ("src" in Part && "src" in element) {
+                Part.src = element.src
+            }
+
+            if ("alt" in Part && "alt" in element) {
+                Part.alt = element.alt
+            }
+
+            if ("classes" in element) {
+                Part.classList.add(...element.classes);
+            }
+
+            prefab.appendChild(Part)
+        }
+    }
+}
