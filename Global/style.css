@@ -7,8 +7,12 @@ body {
     display: inline-block;
 }
 
+nav {
+    display: inline-block;
+}
 
 .document {
-    max-width: 50%;
-    max-height: 50%;
+    display: inline-block;
+    max-width: 40%;
+    max-height: 70%;
 }
